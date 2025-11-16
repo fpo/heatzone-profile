@@ -1486,7 +1486,7 @@ class HeatingProfileCard extends LitElement {
   }
 }
 
-customElements.define("heating-profile-card", HeatingProfileCard);
+customElements.define("heatzone-profile-card", HeatingProfileCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
@@ -1497,7 +1497,7 @@ window.customCards.push({
 });
 
 console.info(
-  "%c HEATING-PROFILE-CARD %c 0.9.0 ",
+  "%c HEATZONE-PROFILE-CARD %c 0.9.0 ",
   "color: white; background: coral; font-weight: 700;",
   "color: coral; background: white; font-weight: 700;"
 );
