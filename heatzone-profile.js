@@ -1134,6 +1134,16 @@ class HeatingProfileCard extends LitElement {
   // ANCHOR - html
   render() {
 
+    const t = (key) => this._hass.localize(key);
+
+    const labelSave      = t("ui.common.save");   // "Speichern"
+    const labelBack      = t("ui.common.back");   // "Zurück"
+    const labelSettings  = t("panel.config");     // "Einstellungen"
+
+    const labelAway      = t("state_badge.person.not_home"); // "Abwesend"
+    const labelHoliday   = t("ui.card.alarm_control_panel.modes.armed_vacation"); // "Urlaub"
+
+
     // Wenn config fehlt - zeige Fehler
     if (!this.config) {
       return html`
@@ -1260,11 +1270,11 @@ class HeatingProfileCard extends LitElement {
 
             <div class="footer">
               <button class="settings-button" @click=${this.toggleView}>
-                <span>Einstellungen</span>
+                <span>${labelSettings}</span>
               </button>
 
               <button class="save-button" @click=${this.handleSave}>
-                Speichern
+                ${labelSave}
               </button>
             </div>
           </div>
@@ -1277,8 +1287,8 @@ class HeatingProfileCard extends LitElement {
                 <div class="dot yellow"></div>
                 <div class="dot green"></div>
               </div>
-              <div class="title">Einstellungen</div>
-              <div style="width: 100px;"></div>
+              <div class="title">${labelSettings}</div>
+              <div style="width: 20px;"></div>
             </div>
 
             <div class="settings-content">
@@ -1386,7 +1396,7 @@ class HeatingProfileCard extends LitElement {
                 <div class="slider-row">
                   <div class="slider-header">
                     <div class="slider-label">
-                      <span>Abwesend:</span>
+                      <span>${labelAway}:</span>
                     </div>
                     <span class="slider-value">${this.abwesend.toFixed(1)}°C</span>
                   </div>
@@ -1406,7 +1416,7 @@ class HeatingProfileCard extends LitElement {
                 <div class="slider-row">
                   <div class="slider-header">
                     <div class="slider-label">
-                      <span>Urlaub:</span>
+                      <span>${labelHoliday}:</span>
                     </div>
                     <span class="slider-value">${this.urlaub.toFixed(1)}°C</span>
                   </div>
@@ -1440,11 +1450,11 @@ class HeatingProfileCard extends LitElement {
 
             <div class="footer">
               <button class="settings-button" @click=${this.toggleView}>
-                <span>Zurück</span>
+                <span>${labelBack}</span>
               </button>
 
               <button class="save-button" @click=${this.handleSave}>
-                Speichern
+                ${labelSave}
               </button>
             </div>
           </div>
