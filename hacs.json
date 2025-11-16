@@ -1,0 +1,7 @@
+{
+  "name": "HeatZone Profile",
+  "render_readme": true,
+  "filename": "heatzone-profile.js",
+  "country": "DE",
+  "homeassistant": "2025.11.0"
+}
